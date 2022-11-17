@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Sell Your Junk</title>
+</head>
+<body>
+    <div class="navbar border-bottom" style="background-color:silver">
+        <div class="mb-3 mt-3 col-8 mx-auto">
+            <div class="d-flex justify-content-between">
+                <h1 class="text-white" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Sell Your Junk</h1>
+                <h4 class="text-black">{{user.first_name}} {{user.last_name}}</h4>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p class="text-white">A site to track randomly planted trees</p>
+                <div class="d-flex justify-content-between" style="width: 310px; height: 40px;">
+                    <form action="/my_items/{{user.id}}">
+                        <button class="btn" style="background-color: #8fdece;">My Items</button>
+                    </form>
+                    <form action="/create_listing">
+                        <button class="btn" style="background-color: #8fdece;">Create Listing</button>
+                    </form>
+                    <form action="/logout">
+                        <button class="btn" style="background-color: #8fdece;">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8 mx-auto mt-5 p-4 rounded" style="background-color: #A3E4D7;">
+        <div class="text-left mt-3 mb-3">
+            <h3>Items for Sale</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in items %} 
+                <tr>
+                    <td>{{i.item.name}}</td>
+                    <td>${{i.item.price}}</td>
+                    <td>{{i.item.description}}</td>
+                    <td><a href="/item/info/{{i.item.id}}">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
