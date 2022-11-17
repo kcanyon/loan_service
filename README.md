@@ -1,4 +1,4 @@
-# sell_your_junk
+# sell_your_junk (in progress)
 A site where users can create listings for items they own with the goal of selling them to other users.
 This project is still in progress - in the process of adding a Stripe API to process mock payments.  
  
@@ -19,3 +19,6 @@ Product Backlog:
 - User Info 
 - User Edit Info 
 - User Change Password
+
+Project Demo:
+[sell_your_junk.zip](https://github.com/kcanyon/sell_your_junk/files/10036398/sell_your_junk.zip)
