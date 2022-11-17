@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://sandbox.web.squarecdn.com/v0/square.js"></script>
+    <title>Sell Your Junk</title>
+</head>
+<body>
+    <div class="navbar border-bottom border-light" style="background-color:silver">
+        <div class="mt-2 col-8 mx-auto d-flex justify-content-between">
+            <div class="d-flex justify context-between">
+                <h1 class="text-white" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Sell Your Junk</h1>
+                <p class="text-white pt-3 mx-4">Find a new bargain every day!</p>
+            </div>
+            <div>
+                <h5 class="text-dark pt-4">Hey {{user.first_name}} {{user.last_name}}!</h5>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom border-dark">
+        <div class="mx-auto col-8 d-flex justify-content-end pt-1">
+            <div class="d-flex justify-content-between" style="width: 450px; height: 40px;">
+                <form action="/items/dashboard">
+                    <button class="btn text-secondary" style="background-color: #ffffff;">Dashboard</button>
+                </form>
+                <form action="/create_listing">
+                    <button class="btn text-secondary" style="background-color: #ffffff;">Create Listing</button>
+                </form>
+                <form action="/my_items/{{user.id}}">
+                    <button class="btn text-secondary" style="background-color: #ffffff;">My Account</button>
+                </form>
+                <form action="/logout">
+                    <button class="btn text-secondary" style="background-color: #ffffff;">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="border p-5 col-8 mx-auto mt-5 rounded" style="background-color: #A3E4D7;">
+        <!-- stripe -->
+    </div>
+</body>
+</html>
